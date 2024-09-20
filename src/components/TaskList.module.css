@@ -1,0 +1,28 @@
+.taskListBox {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.taskListHeaderBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.taskListBody {
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-400);
+}
+
+.createdTaskText {
+  font-weight: bold;
+  color: var(--blue-100);
+}
+
+.concludedTaskText {
+  font-weight: bold;
+  color: var(--purple-100);
+}
