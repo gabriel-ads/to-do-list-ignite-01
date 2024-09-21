@@ -1,0 +1,21 @@
+.emptyTaskListBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15.25rem;
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-400);
+}
+
+img {
+  margin-bottom: 1rem;
+}
+
+span {
+  color: var(--gray-300);
+}
+
+span:first-of-type {
+  font-weight: bold;
+}

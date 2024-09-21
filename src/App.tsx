@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Header } from './components/Header'
 import { TaskInput } from './components/TaskInput'
 import './global.css'
-import { TaskList } from './components/TaskList'
+import { TaskListContainer } from './components/TaskListContainer'
 import styles from './App.module.css'
 
 export interface Task {
@@ -36,7 +36,7 @@ function App() {
 
           <TaskInput onCreateTask={createTask}/>
           
-          <TaskList tasks={tasks} onDeleteTask={()=>{}}/>
+          <TaskListContainer tasks={tasks} onDeleteTask={()=>{}}/>
         </div>
       </div>
     </>
