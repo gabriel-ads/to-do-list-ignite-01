@@ -8,35 +8,56 @@ import styles from './App.module.css'
 export interface Task {
   id: number
   description: string
+  concluded: boolean
 }
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([{
     id: 1,
-    description: 'Melhorar o código'
+    description: 'Melhorar o código',
+    concluded: false
   }])
 
-  function createTask(newTaskDescription: string){
+  const handleCreateTask = (newTaskDescription: string) => {
     const lengthOfTasksArray = tasks.length
     setTasks((value) => 
       [...value, 
         {
           id: lengthOfTasksArray + 1,
-          description: newTaskDescription
+          description: newTaskDescription,
+          concluded: false
         }
       ]
     )
   }
+
+  const handleCompleteTask = (taskId: number) => {
+    setTasks((tasks) => {
+      return tasks.map(task => {
+        if(task.id === taskId && task.concluded === false) {
+          return { ...task, concluded: true}
+        } else if (task.id === taskId) return { ...task, concluded: false}
+
+        return task
+      })
+    })
+  }
+
+  const handleDeleteTask = (taskToDelete: Task) => {
+    setTasks((tasks) => {
+        return tasks.filter((task) => {
+          return task !== taskToDelete
+        })
+      })
+    }
 
   return (
     <>
       <Header />
       <div className={styles.container}>
         <div className={styles.containerBox}>
-
-          <TaskInput onCreateTask={createTask}/>
-          
-          <TaskListContainer tasks={tasks} onDeleteTask={()=>{}}/>
+          <TaskInput onCreateTask={handleCreateTask}/>
+          <TaskListContainer tasks={tasks} onDeleteTask={handleDeleteTask} onCompleteTask={handleCompleteTask}/>
         </div>
       </div>
     </>

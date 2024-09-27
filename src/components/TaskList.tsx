@@ -4,17 +4,21 @@ import styles from './TaskList.module.css'
 
 interface TaskLiskProps {
   tasks: Task[]
+  onCompleteTask: (taskId: number) => void
+  onDeleteTask: (task: Task) => void
 }
 
-export function TaskList({tasks}: TaskLiskProps) {
+export function TaskList({ tasks, onCompleteTask, onDeleteTask }: TaskLiskProps) {
   return (
     <>
-      {tasks.map(({id, description}) => {
+      {tasks.map(task => {
         return (
-          <div className={styles.taskListBox}>
-            <input key={id} type="checkbox" id={id.toString()} />
-            <label id={id.toString()}>{description}</label>
-            <Trash size={21}/>
+          <div key={task.id} className={styles.taskListBox}>
+            <input  type="checkbox" id={task.id.toString()} defaultChecked={task.concluded} onClick={() => onCompleteTask(task.id)} />
+            <label className={task.concluded ? styles.taskConcluded : undefined} id={task.id.toString()}>
+              {task.description}
+            </label>
+            <Trash className={styles.trashCan} size={21} onClick={() => onDeleteTask(task)}/>
           </div>
         )
       })}

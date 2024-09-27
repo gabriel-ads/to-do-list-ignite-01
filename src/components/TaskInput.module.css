@@ -33,6 +33,7 @@
   justify-content: center;
   cursor: pointer;
   padding: 0.5rem;
+  transition: 0.25s;
 }
 
 .taskInputBox button:hover {

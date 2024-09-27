@@ -41,3 +41,17 @@ label {
   padding: 0 0.75rem 0 0.75rem;
   font-size: 14px;
 }
+
+.taskConcluded {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.trashCan {
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.trashCan:hover {
+  color: red;
+}
