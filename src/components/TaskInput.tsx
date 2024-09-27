@@ -24,7 +24,7 @@ export function TaskInput({ onCreateTask }:TaskInputProps) {
         <input type="text"  onChange={handleNewTaskChange} placeholder='Adicione uma nova tarefa' required/>
         <button type='submit'>
           Criar
-          <PlusCircle color='#ffffff' size={16} />
+          <PlusCircle color='#ffffff' size={21} />
         </button>
       </form>
   )

@@ -15,23 +15,25 @@
 .createdTaskText {
   font-weight: bold;
   color: var(--blue-100);
-  vertical-align: middle;
+  margin-right: 0.5rem;
 }
 
 .concludedTaskText {
   font-weight: bold;
   color: var(--purple-100);
+  margin-right: 0.5rem;
 }
 
 .countBox {
-  display: inline-block;
+  display: flex;
   background-color: var(--gray-400);
-  width: 1.5rem;
-  height: 1.1875rem;
-  border-radius: 999px;
-  text-align: center;
   color: var(--gray-200);
+  padding: 0.2rem 0.6rem;
   font-size: 12px;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
 .headerTextBox {
